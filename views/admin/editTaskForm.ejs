@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Edit Task Form</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+
+    <div class="container p-5 bg-white rounded shadow-sm mt-3" style="width: 100%;">
+        <form action="/editTaskForm/<%= taskToedit._id %>" method="POST" class="container">
+            <h3 class="mb-4 text-center">Edit Task</h3>
+
+            <!-- Task Title -->
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= taskToedit.title %>" required>
+            </div>
+
+            <!-- Task Description -->
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3"><%= taskToedit.description %></textarea>
+            </div>
+
+            <!-- Task Status -->
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" name="status" required>
+                    <option value="pending" <%= taskToedit.status === 'pending' ? 'selected' : '' %>>Pending</option>
+                    <option value="in-progress" <%= taskToedit.status === 'in-progress' ? 'selected' : '' %>>In Progress</option>
+                    <option value="completed" <%= taskToedit.status === 'completed' ? 'selected' : '' %>>Completed</option>
+                </select>
+            </div>
+
+            <!-- Created At -->
+            <div class="mb-3">
+                <label for="createdAt" class="form-label">Created At</label>
+                <input type="datetime-local" class="form-control" id="createdAt" name="createdAt" value="<%= taskToedit.createdAt.toISOString().slice(0, 16) %>">
+            </div>
+
+            <!-- Completed At -->
+            <div class="mb-3">
+                <label for="completedAt" class="form-label">Completed At</label>
+                <input type="datetime-local" class="form-control" id="completedAt" name="completedAt" value="<%= taskToedit.completedAt ? taskToedit.completedAt.toISOString().slice(0, 16) : '' %>">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Update Task</button> <br><br>
+            <a href="/" type="submit" class="btn btn-primary w-100">Back To Home</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+
+</html>
