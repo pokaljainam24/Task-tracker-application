@@ -49,7 +49,7 @@ Welcome to **Task Manager**, a robust and secure application built using **Node.
   ```
 3. **Configure your environment variables**:
 
-  **Create a .env file in the root directory and add the following**:
+  - **Create a .env file in the root directory and add the following**:
   ```
   JWT_SECRET=your_jwt_secret
   MONGO_URI=your_mongo_database_uri
