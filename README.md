@@ -79,6 +79,8 @@ Welcome to **Task Manager**, a robust and secure application built using **Node.
 
 🌎 **Live Project**: [Task-Tracker-Application](https://task-tracker-application-eozz.onrender.com)
 
+---
+
 ## 🔑 API Endpoints
 
 ### 🧑‍💻 User Authentication
@@ -86,6 +88,13 @@ Welcome to **Task Manager**, a robust and secure application built using **Node.
 ```http
 POST /register
 POST /login
+```
+
+### 🧑‍💻 User Authentication Cradantials
+
+```
+Email: jainampokal@gmail.com
+Pass: 1234
 ```
 
 ### ✅ Task Management
@@ -111,6 +120,8 @@ POST /login
 ## DELETE /projects/:id
 - Delete a project (Authentication required).
 ```
+
+---
 
 ## 📂 Project Structure
 
@@ -154,6 +165,8 @@ task-tracker/
 └── README.md                     # Project overview and documentation
 ```
 
+---
+
 ## 🎯 How It Works
 
 1. **User Registration & Authentication**:
@@ -162,7 +175,9 @@ task-tracker/
    - Authenticated users can create, view, update, and delete tasks. Tasks can be grouped under different projects to help users stay organized.
 3. **Protected Routes**:
    - Routes that require authentication (such as task management and project management) are protected by JWT authentication middleware to ensure that only logged-in users can access them.
-  
+
+---
+
 ## 💬 Contact
 
 **Developer**: Jainam Pokal
